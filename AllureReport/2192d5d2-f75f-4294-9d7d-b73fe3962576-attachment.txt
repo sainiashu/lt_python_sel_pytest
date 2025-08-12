@@ -1,0 +1,4 @@
+Pytest Fixture Auto use condition is working fine
+Login Successful
+Test 2 is complete
+Log Out Successful
