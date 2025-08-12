@@ -5,13 +5,15 @@ from pages.home_page import HomePage
 
 
 class LoginPage(BasePage):
+    def __init__(self, driver):
+        super().__init__(driver)
+
     email_address_field= (By.ID,"Email")
     password_field= (By.ID,"Password")
     login_btn = (By.XPATH, "//input[@value='Log in']")
     warning_msg = (By.XPATH,"//span[contains(text(),'Login was unsuccessful. Please correct the errors ')]")
 
-    def __init__(self,driver):
-        super().__init__(driver) # if we do not use the super class or Basepage class we need write the complete code like this
+    # if we do not use the super class or Basepage class we need write the complete code like this
         # "self.driver.find_element(email_address_field).send_keys(email_address)"
 
 

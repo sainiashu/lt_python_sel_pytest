@@ -4,7 +4,7 @@ class BasePage:
     """
     The purpose of the Basepage class is to contain common methods that are used in the entire All page objects
     """
-    def __int__(self, driver):
+    def __init__(self, driver):
         self.driver = driver
 
     def find(self, *locator):
@@ -14,8 +14,9 @@ class BasePage:
         self.find(*locator).click()
 
     def set(self, locator, value):
-        self.driver(*locator).clear()
-        self.find(*locator).send_keys(value)
+        element = self.find(*locator)
+        element.clear()
+        element.send_keys(value)
 
     def get_text(self, locator):
         return self.find(*locator).text

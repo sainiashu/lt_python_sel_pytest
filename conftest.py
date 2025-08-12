@@ -10,6 +10,9 @@ from webdriver_manager.firefox import GeckoDriverManager
 # from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
+from utilities.test_data import TestData
+
+
 @pytest.fixture(params=["chrome","firefox"])
 def initialize_driver(request):
     if request.param == "chrome":
@@ -20,6 +23,8 @@ def initialize_driver(request):
     #     # driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
     request.cls.driver = driver
     print("Browser: ", request.param)
+    driver.get(TestData.url)
+    driver.maximize_window()
     yield
     print("Close Driver")
     driver.close()
