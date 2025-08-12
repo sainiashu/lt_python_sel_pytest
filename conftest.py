@@ -38,7 +38,7 @@ def initialize_driver(request):
 
 
 # Step One: Declares variables for setting up the selenium Grid test
-user_name= "sainiashu90"
+user_name= "username"
 access_token= "saved location"
 remote_url = "http://" + user_name + ":" + access_token +"@hub.lambdatest.com/wd/hub"
 
